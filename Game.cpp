@@ -39,10 +39,10 @@ void Game::update(sf::Event& event) {
     //leftPaddle->update(resultVals[0] < .5 ? -.25 : .25);
     rightPaddle->update(resultVals[0] < .5 ? -.25 : .25);
 
-    std::cout << std::endl;
+    /*std::cout << std::endl;
     std::cout << "Inputs: " << inputVals[0] << " " << inputVals[1] << std::endl;
     std::cout << "Outputs: " << resultVals[0] << std::endl;
-    std::cout << "Targets: " << targetVals[0] << std::endl;
+    std::cout << "Targets: " << targetVals[0] << std::endl;*/
 }
 
 void Game::render() {
