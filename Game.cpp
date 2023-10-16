@@ -28,16 +28,16 @@ void Game::update(sf::Event& event) {
 
     inputVals.push_back(ball.getPosition().x);
     inputVals.push_back(ball.getPosition().y);
-    targetVals.push_back(ball.getPosition().y < rightPaddle->getPosition().y ? 0 : 1);
+    targetVals.push_back(ball.getPosition().y < leftPaddle->getPosition().y ? 0 : 1);
 
-    leftPaddle->update(event, paddleEvent);
+    rightPaddle->update(event, paddleEvent);
 
     myNet->feedForward(inputVals);
     myNet->backProp(targetVals);
     myNet->getResults(resultVals);
 
     //leftPaddle->update(resultVals[0] < .5 ? -.25 : .25);
-    rightPaddle->update(resultVals[0] < .5 ? -.25 : .25);
+    leftPaddle->update(resultVals[0] < .5 ? -.25 : .25);
 
     /*std::cout << std::endl;
     std::cout << "Inputs: " << inputVals[0] << " " << inputVals[1] << std::endl;
